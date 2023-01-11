@@ -65,6 +65,11 @@
                         <td>:</td>
                         <td contenteditable>{{$p->nama}}</td>
                     </tr>
+                    <tr>
+                        <td>Kode Petugas</td>
+                        <td>:</td>
+                        <td contenteditable>{{$p->id}}</td>
+                    </tr>
                 </table>
             </section>
         </section>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArtisanController;
 use App\Http\Controllers\PetugasController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,5 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get("/run",[ArtisanController::class,"run"]);
+
 
 Route::get("/petugas",[PetugasController::class,"index"]);
