@@ -1,8 +1,8 @@
-name: Publish Backend to Dev
+name: Publish Backend to Prod
 on:
   push:
     branches:
-      - dev
+      - master
 
 jobs:
   FTP-Deploy-Action:
