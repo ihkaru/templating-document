@@ -46,6 +46,9 @@ class SLSSeeder extends Seeder
             if($data[0].$data[2].$data[4].$data[6].$data[9]."0".$data[10] == "6112080011002200"){
                 $this->command->info($data[11]." adalah subsls ".$data[10]." dengan id SLS ".$data[0].$data[2].$data[4].$data[6].$data[9]."0".$data[10]);
             }
+            if($data[9] == "9001" || $data[9] == "9002"){
+                $this->command->info($data[11]." adalah subsls ".$data[10]." dengan id SLS ".$data[0].$data[2].$data[4].$data[6].$data[9]."0".$data[10]);
+            }
         }
 
         foreach (array_chunk($sls, 1000) as $i) {

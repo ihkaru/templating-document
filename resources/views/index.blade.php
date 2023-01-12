@@ -38,6 +38,9 @@
                         @endif
                         <td>Kecamatan</td>
                         <td>:</td>
+                        @if (!$p->penunjukJalan->first()->sls)
+                            {{dd($p)}}
+                        @endif
                         <td contenteditable>{{ucwords(strtolower($p->penunjukJalan->first()->sls->kec))}}</td>
                     </tr>
                     <tr>

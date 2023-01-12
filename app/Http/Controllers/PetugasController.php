@@ -9,7 +9,7 @@ class PetugasController extends Controller
 {
     public function index()
     {
-        $petugas = Petugas::whereHas("penunjukJalan");
+        $petugas = Petugas::where("jabatan","PPL")->whereHas("penunjukJalan");
         if(!request("koseka") && !request("pml") && !request("ppl")){
             return "Kode koseka/pml harus diisi pada link. Misal /?koseka=12000 untuk koseka nomor 12 atau /?pml=12030 untuk dengan 12030 adalah kode pml";
         }
@@ -18,7 +18,6 @@ class PetugasController extends Controller
                 return "Tidak ada Koseka dengan kode petugas ".request("koseka");
             }
             $petugas->where("id","like",substr(request("koseka"),0,2)."%")
-                            ->where("jabatan","PPL")
                             ->with(["penunjukJalan.sls"]);
         }
         if(request("pml")){
