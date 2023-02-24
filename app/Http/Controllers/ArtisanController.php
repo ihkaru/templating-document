@@ -42,5 +42,9 @@ class ArtisanController extends Controller
             Artisan::call("cache:clear",[],$output);
             return $output->fetch();
         }
+        if(request("storage-link")){
+            Artisan::call("storage:link",[],$output);
+            return $output->fetch();
+        }
     }
 }
